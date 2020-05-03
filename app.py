@@ -7,7 +7,7 @@ import time
 import html2text
 # from GoogleMapsAPIKey import get_my_key
 
-lat_lon = '-33.8670522,151.1957362'
+# lat_lon = '-33.8670522,151.1957362'
 
 #define API
 API_KEY = 'AIzaSyA950W2SYIsCt6uvuFNItJmRGetaxY4W30'
@@ -68,7 +68,7 @@ def handle_foodbank_request ():
 def handle_location (user_type=None):
 	location = fl.request.form['location'] 
 
-	
+	name = gmaps.place(place_id=location, fields=['name'])
 
 	service_type = 'restaurant' if user_type=='foodbank' else 'foodbank'
 
