@@ -29,14 +29,25 @@ def handle_name (user_type=None):
 def handle_foodbank_request ():
 	data = json.loads(fl.request.form['js_data'])
 
+	name = data['name']
+	location = data['location']
+	email = data['email']
+	phone = data['phone']
+	
+
 	app.logger.debug(data)
 
-	return None
+	return jsonify({'name' : name, 'location' : location, 'email' : email, 'phone' : phone})
 
 @app.route('/handle_restaurant_offer', methods=['POST'])
 def handle_restaurant_offer ():
 	data = json.loads(fl.request.form['js_data'])
 
+	name = data['name']
+	location = data['location']
+	email = data['email']
+	phone = data['phone']
+	
 	app.logger.debug(data)
 
-	return None
+	return jsonify({'name' : name, 'location' : location, 'email' : email, 'phone' : phone})
