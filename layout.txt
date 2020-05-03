@@ -1,0 +1,36 @@
+Website
+- page 1: asks user if they are a restaurant or a food bank
+- page 2: asks user for restaurant or food bank name or address
+- restaurant
+   - page 3
+	- provide inventory: food + quantity + price
+   - page 4
+	- map of nearby food banks
+	- sidebar
+		- contact info
+		- contact button
+		- address
+		- directions to food banks
+- food bank
+   - page 3
+	- map of nearby restaurants
+	- sidebar
+		- contact info
+		- contact button
+		- address
+		- directions to, 'offering' button of restaurants
+	   		- if no inventory, no button or a message in place of button
+	   		- click on button => new page or list pops up
+- communications
+   - appearance: email/some communicating icon in corner on all pages
+   - page: same for both restaurants and food banks
+	- sidebar: list of locations you are contacting
+	- red dot on location icon if you have an unread message
+	- text format or email format?
+
+- other notes
+   - food separated into categories, or is that unnecessary?
+   - organize offerings based on type of food?
+   - home page before page 1?
+   - registration is probably necessary if we want the communicating to work?
+   - what to do about visiting the site when you already have an account?
