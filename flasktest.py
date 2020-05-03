@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__, static_folder='static')
 
@@ -14,3 +14,7 @@ def restaurant (name=None):
 @app.route('/foodbank')
 def food_bank ():
 	return 'Food Bank'
+
+@app.route('/handle_data', methods=['POST'])
+def handle_data ():
+	return redirect('/restaurant/' + request.form['name'])
