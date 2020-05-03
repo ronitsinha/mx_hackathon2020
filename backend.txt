@@ -1,0 +1,9 @@
+Caspian, Rachel, Alex
+Google Maps API
+
+- using Google Maps API to find nearby food banks/restaurants
+    - use places.py
+- **save data on each user (each restaurant & food bank)
+    - use requests?
+- generate data for each place
+    - use places.py
