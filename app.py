@@ -68,8 +68,6 @@ def handle_foodbank_request ():
 def handle_location (user_type=None):
 	location = fl.request.form['location'] 
 
-	
-
 	service_type = 'restaurant' if user_type=='foodbank' else 'foodbank'
 
 	nearby = get_nearby_places(location, user_type, 50)
