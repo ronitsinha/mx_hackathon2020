@@ -48,7 +48,7 @@ form .flex-item {
 
 .main {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap;
 }
 
 .main .nearby {
@@ -83,4 +83,10 @@ form .flex-item {
 
 .main .request form .field{
 	text-align: center;
+}
+
+#requestorder {
+	text-align: left;
+	list-style: none;
+	margin-right: auto;
 }

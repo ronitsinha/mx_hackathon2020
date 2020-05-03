@@ -1,4 +1,5 @@
 import flask as fl
+import json
 
 app = fl.Flask(__name__, static_folder='static')
 
@@ -16,7 +17,6 @@ def restaurant (name=None):
 def foodbank (name=None):
 	return fl.render_template('foodbank.html', name=name)
 
-@app.route('/handle_name', methods=['POST'])
 @app.route('/handle_name/<user_type>', methods=['POST'])
 def handle_name (user_type=None):
 
@@ -24,3 +24,11 @@ def handle_name (user_type=None):
 		return fl.redirect( fl.url_for(user_type, name=fl.request.form['name']) )
 
 	return fl.redirect( fl.url_for(user_type) )
+
+@app.route('/handle_foodbank_request', methods=['POST'])
+def handle_foodbank_request ():
+	data = json.loads(fl.request.form['js_data'])
+
+	app.logger.debug(data)
+
+	return None
