@@ -1,0 +1,3 @@
+{'Bob': 'Lisa', 'John': 'Mary', '1': 2}
+{'stuff': 'more stuff', 'another': 'one'}
+{'name': "Berticci's", 'email': 'bertuccis@gmail.com', 'address': 'Our Address', 'food_and_amt_to_give': {'Pizza Rolls': 24, 'Pepperoni Slices': 89, 'Salad': 15}}

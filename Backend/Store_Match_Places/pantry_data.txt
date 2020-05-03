@@ -1,0 +1,1 @@
+{'name': 'Helper', 'email': 'good_pantry@gmail.com', 'address': 'Our Address', 'food_and_amt_needed': {'Beans': 24, 'Pepperoni Slices': 89, 'Salad': 15}}
