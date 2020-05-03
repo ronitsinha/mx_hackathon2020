@@ -19,4 +19,8 @@ def foodbank (name=None):
 @app.route('/handle_name', methods=['POST'])
 @app.route('/handle_name/<user_type>', methods=['POST'])
 def handle_name (user_type=None):
-	return fl.redirect( fl.url_for(user_type, name=fl.request.form['name']) )
+
+	if not fl.request.form['name'] == '':
+		return fl.redirect( fl.url_for(user_type, name=fl.request.form['name']) )
+
+	return fl.redirect( fl.url_for(user_type) )

@@ -2,10 +2,11 @@
 <html>
 <head>
 	<title>Food Bank</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 	{% if name %}
-		<p>Hello Food Bank {{ name }}!</p>
+		<p id='username'>{{ name }}</p>
 	{% else %}
 		<p>What food bank are you?</p>
 		<form action="{{ url_for('handle_name', user_type='foodbank') }}" method="post">

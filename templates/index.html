@@ -2,10 +2,13 @@
 <html>
 <head>
 	<title>Index</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-	<p>Are you a <strong>restaurant</strong> or a <strong>food bank</strong>?</p>
-	<a href='/restaurant'>Restaurant</a>
-	<a href='/foodbank'>Food Bank</a>
+	<div class="index-container">
+		<p>Are you a <strong>restaurant</strong> or a <strong>food bank</strong>?</p>
+		<a href='/restaurant'>Restaurant</a>
+		<a href='/foodbank'>Food Bank</a>
+	</div>
 </body>
 </html>
