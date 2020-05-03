@@ -7,16 +7,52 @@
 <body>
 	<div class="foodbank container">
 		{% if name %}
-			<p class='username flex-item'>{{ name }}</p>
+			<ul class="navigation flex-item">
+				<li class="username"><a href="#">{{ name }}</a></li>
+				<li class="home"><a href="/">Home</a></li>
+				<li class="notifications"><a href="#">Notifications</a></li>
+			</ul>
+			<div class="main">
+				<ul class="nearby">
+					<li>Restaurant #1</li>
+					<li>Restaurant #2</li>
+					<li>Restaurant #3</li>
+				</ul>
+
+				<div class="request">
+					<h3>What do you need?</h3>
+
+					<form action="">
+						<div class="field">
+							<label for="name">Food:</label><br>
+							<input type="text" id="name" name="name">
+						</div>
+
+						<div class="field">
+							<label for="name">Qty:</label><br>
+							<input type="text" id="name" name="name">
+						</div>
+
+					</form>
+
+					<ul class="order">
+						
+					</ul>
+
+				</div>
+			</div>
+
 		{% else %}
 
-			<p class="flex-item">What food bank are you?</p>
-			<form class="flex-item" action="{{ url_for('handle_name', user_type='foodbank') }}" method="post">
-				<label for="name">Food Bank:</label>
-				<input type="text" id="name" name="name">
+			<div class="query container">
+				<p class="flex-item">What food bank are you?</p>
+				<form class="flex-item" action="{{ url_for('handle_name', user_type='foodbank') }}" method="post">
+					<label for="name">Food Bank:</label>
+					<input type="text" id="name" name="name">
 
-				<input type="submit" name="Submit">
-			</form>
+					<input type="submit" name="Submit">
+				</form>
+			</div>
 
 		{% endif %}
 	</div>
