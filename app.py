@@ -22,14 +22,16 @@ def foodbank (name=None):
 def handle_foodbank_request ():
 	data = json.loads(fl.request.form['js_data'])
 
+	name = data['name']
+	location = data['location']
+	email = data['email']
+	phone = data['phone']
+	
+
 	app.logger.debug(data)
 
-	return None
+	return jsonify({'name' : name, 'location' : location, 'email' : email, 'phone' : phone})
 
 @app.route('/handle_location/<user_type>', methods=['POST'])
 def handle_location (user_type=None):
 	location = fl.request.form['location'] 	
-
-	app.logger.debug(location)
-
-	return ''
