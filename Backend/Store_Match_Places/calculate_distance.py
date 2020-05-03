@@ -4,7 +4,6 @@
 
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
-import os
 
 def cal_dist(addr_1, addr_2):
 	geolocator = Nominatim()
