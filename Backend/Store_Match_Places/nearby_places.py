@@ -1,6 +1,7 @@
 import googlemaps
 import pprint
 import time
+import html2text
 # from GoogleMapsAPIKey import get_my_key
 
 lat_lon = '-33.8670522,151.1957362'
@@ -32,6 +33,10 @@ for place in places_result['results']:
 
     # print the results of the details, returned as a dictionary.
     pprint.pprint(places_details['result'])
+    html_address = html2text.HTML2Text()
+    readable_address = html_address.handle(places_details['result'].get("adr_address"))
+    print(readable_address)
 
     # store the results in a list object.
     stored_results.append(places_details['result'])
+    stored_results.append(readable_address)
