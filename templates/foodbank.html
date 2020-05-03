@@ -5,16 +5,20 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-	{% if name %}
-		<p id='username'>{{ name }}</p>
-	{% else %}
-		<p>What food bank are you?</p>
-		<form action="{{ url_for('handle_name', user_type='foodbank') }}" method="post">
-			<label for="name">Food Bank:</label>
-			<input type="text" id="name" name="name"><br>
+	<div class="foodbank container">
+		{% if name %}
+			<p class='username flex-item'>{{ name }}</p>
+		{% else %}
 
-			<input type="submit" name="Submit">
-		</form>
-	{% endif %}
+			<p class="flex-item">What food bank are you?</p>
+			<form class="flex-item" action="{{ url_for('handle_name', user_type='foodbank') }}" method="post">
+				<label for="name">Food Bank:</label>
+				<input type="text" id="name" name="name">
+
+				<input type="submit" name="Submit">
+			</form>
+
+		{% endif %}
+	</div>
 </body>
 </html>
