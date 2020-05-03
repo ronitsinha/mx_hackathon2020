@@ -1,7 +1,7 @@
 HOW TO USE THIS CODE:
 
 Dependencies:
-"pip install geopy"
+"pip3 install geopy"
 In order to make geopy work, you must run the "Install Certificates" script included with your Python installation. You can probably find it by searching for it in Finder.
 
 By importing the pantry class, you can make a pantry object representing a store.
