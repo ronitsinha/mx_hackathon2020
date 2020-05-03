@@ -1,0 +1,5 @@
+{'name': 'Helper', 'email': 'good_pantry@gmail.com', 'address': '295 California Street, Newton, MA', 'food_and_amt_needed': {'Beans': 24, 'Pepperoni Slices': 89, 'Salad': 15}}
+{'name': 'Good Soup', 'email': 'good_soup@gmail.com', 'address': ' 11 Homer Street, Newton, MA', 'food_and_amt_needed': {'Soup': 25}}
+{'name': 'Pantry 1', 'email': 'good_pantry@gmail.com', 'address': '25 Chestnut St, Watertown, MA 02472', 'food_and_amt_needed': {'Beans': 24, 'Pepperoni Slices': 89, 'Salad': 15}}
+{'name': 'Pantry 2', 'email': 'good_soup@gmail.com', 'address': '1608 Beacon Street, Newton, MA, 02468', 'food_and_amt_needed': {'Soup': 25}}
+{'name': 'Helper', 'email': 'good_pantry@gmail.com', 'address': 'Our Address', 'food_and_amt_needed': {'Beans': 24, 'Pepperoni Slices': 89, 'Salad': 15}}

@@ -1,0 +1,4 @@
+{'name': "Bertucci's", 'email': 'bertuccis@gmail.com', 'address': '275 Centre Street, Newton, Massachusetts 02458', 'food_and_amt_to_give': {'Pizza Rolls': 24, 'Pepperoni Slices': 89, 'Salad': 15}}
+{'name': 'Subway', 'email': 'subway@gmail.com', 'address': 'Subway, 419 Washington St, Brighton, MA 02135', 'food_and_amt_to_give': {'Pizza Pockets': 2}}
+{'name': "Bertucci's", 'email': 'bertuccis@gmail.com', 'address': 'Our Address', 'food_and_amt_to_give': {'Pizza Rolls': 24, 'Pepperoni Slices': 89, 'Salad': 15}}
+{'name': 'Subway', 'email': 'subway@gmail.com', 'address': 'Some Address', 'food_and_amt_to_give': {'Pizza Pockets': 2}}
