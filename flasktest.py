@@ -1,20 +1,22 @@
-from flask import Flask, render_template, request, redirect
+import flask as fl
 
-app = Flask(__name__, static_folder='static')
+app = fl.Flask(__name__, static_folder='static')
 
 @app.route('/')
 def index ():
-	return render_template('index.html')
+	return fl.render_template('index.html')
 
 @app.route('/restaurant')
 @app.route('/restaurant/<name>')
 def restaurant (name=None):
-	return render_template('restaurant.html', name=name)
+	return fl.render_template('restaurant.html', name=name)
 
 @app.route('/foodbank')
-def food_bank ():
-	return 'Food Bank'
+@app.route('/foodbank/<name>')
+def foodbank (name=None):
+	return fl.render_template('foodbank.html', name=name)
 
-@app.route('/handle_data', methods=['POST'])
-def handle_data ():
-	return redirect('/restaurant/' + request.form['name'])
+@app.route('/handle_name', methods=['POST'])
+@app.route('/handle_name/<user_type>', methods=['POST'])
+def handle_name (user_type=None):
+	return fl.redirect( fl.url_for(user_type, name=fl.request.form['name']) )
