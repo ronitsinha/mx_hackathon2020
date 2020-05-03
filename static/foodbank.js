@@ -22,7 +22,7 @@ function place_order () {
 		console.log(`${key}: ${orders[key]}`);
 	}
 
-	$.post('/handle_foodbank_request', {
+	$.post('/handle_name_search/restaurant', {
 		js_data: JSON.stringify(orders)
 	});
 }

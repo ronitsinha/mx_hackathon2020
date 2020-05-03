@@ -5,6 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
 
+	<script type="text/javascript">
+		var name_submitted = "{{ True if name else False }}"=='True'
+	</script>
 	<script src="{{ url_for('static', filename='restaurant.js') }}"></script>		
 </head>
 <body>
@@ -41,22 +44,25 @@
 
 					</form>
 
-					<ul id="requestorder">
-						
-					</ul>
+					<ul id="requestorder"></ul>
 
 					<input type="button" value="Make Offer" id="placeorder">
 
 				</div>
 			</div>
 		{% else %}
-			<p class="flex-item">What restaurant are you?</p>
-			<form class="flex-item" action="{{ url_for('handle_name', user_type='restaurant') }}" method="post">
-				<label for="name">Restaurant:</label>
-				<input type="text" id="name" name="name">
+			<div class="query container">
+				<p class="flex-item">What restaurant are you?</p>
+				<form class="flex-item" action="{{ url_for('handle_location', user_type='restaurant') }}" method="post">
 
-				<input type="submit" name="Submit">
-			</form>
+					<label for="name">Location:</label>
+					<input type="text" id="location" name="location">
+
+					<input type="submit" name="Submit">
+				</form>
+
+				<ul id="nameresults"></ul>
+			</div>
 		{% endif %}
 
 	</div>

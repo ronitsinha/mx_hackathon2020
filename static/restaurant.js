@@ -1,17 +1,25 @@
-offers = {}
+var offers = {}
+
+const api_key = 'AIzaSyA950W2SYIsCt6uvuFNItJmRGetaxY4W30'
+
+var latitude, longitude;
 
 window.onload = _ => {
-	console.log('ready!')
+	console.log(name_submitted)
 
-	document.getElementById('requestadd').onclick = _ => {
-		var food = document.getElementById('food').value;
-		var qty = document.getElementById('qty').value;
+	if (name_submitted) {
 
-		document.getElementById('requestorder').innerHTML += `<li>${food}: ${qty}</li>`;
-		offers[food] = parseInt(qty);
+		document.getElementById('requestadd').onclick = _ => {
+			var food = document.getElementById('food').value;
+			var qty = document.getElementById('qty').value;
+
+			document.getElementById('requestorder').innerHTML += `<li>${food}: ${qty}</li>`;
+			offers[food] = parseInt(qty);
+		}
+
+		document.getElementById('placeorder').onclick = make_offer;
+
 	}
-
-	document.getElementById('placeorder').onclick = make_offer;
 }
 
 

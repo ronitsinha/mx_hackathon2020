@@ -1,5 +1,6 @@
 import flask as fl
 import json
+import googlemaps
 
 app = fl.Flask(__name__, static_folder='static')
 
@@ -17,14 +18,6 @@ def restaurant (name=None):
 def foodbank (name=None):
 	return fl.render_template('foodbank.html', name=name)
 
-@app.route('/handle_name/<user_type>', methods=['POST'])
-def handle_name (user_type=None):
-
-	if not fl.request.form['name'] == '':
-		return fl.redirect( fl.url_for(user_type, name=fl.request.form['name']) )
-
-	return fl.redirect( fl.url_for(user_type) )
-
 @app.route('/handle_foodbank_request', methods=['POST'])
 def handle_foodbank_request ():
 	data = json.loads(fl.request.form['js_data'])
@@ -33,10 +26,10 @@ def handle_foodbank_request ():
 
 	return None
 
-@app.route('/handle_restaurant_offer', methods=['POST'])
-def handle_restaurant_offer ():
-	data = json.loads(fl.request.form['js_data'])
+@app.route('/handle_location/<user_type>', methods=['POST'])
+def handle_location (user_type=None):
+	location = fl.request.form['location'] 	
 
-	app.logger.debug(data)
+	app.logger.debug(location)
 
-	return None
+	return ''
