@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Bank</title>
+</head>
+<body>
+	{% if name %}
+		<p>Hello Food Bank {{ name }}!</p>
+	{% else %}
+		<p>What food bank are you?</p>
+		<form action="{{ url_for('handle_name', user_type='foodbank') }}" method="post">
+			<label for="name">Food Bank:</label>
+			<input type="text" id="name" name="name"><br>
+
+			<input type="submit" name="Submit">
+		</form>
+	{% endif %}
+</body>
+</html>
