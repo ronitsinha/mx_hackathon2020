@@ -55,7 +55,7 @@
 				<p class="flex-item">What restaurant are you?</p>
 				<form class="flex-item" action="{{ url_for('handle_location', user_type='restaurant') }}" method="post">
 
-					<label for="name">Location:</label>
+					<label for="name"><a href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder">Location:</a></label>
 					<input type="text" id="location" name="location">
 
 					<input type="submit" name="Submit">

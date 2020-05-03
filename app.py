@@ -34,4 +34,8 @@ def handle_foodbank_request ():
 
 @app.route('/handle_location/<user_type>', methods=['POST'])
 def handle_location (user_type=None):
-	location = fl.request.form['location'] 	
+	location = fl.request.form['location'] 
+
+	name = 'pep'
+
+	return fl.redirect(fl.url_for(user_type, name=name))	
