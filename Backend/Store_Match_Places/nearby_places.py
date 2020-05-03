@@ -33,8 +33,11 @@ for place in places_result['results']:
 
     # print the results of the details, returned as a dictionary.
     pprint.pprint(places_details['result'])
-    html_address = html2text.HTML2Text()
-    readable_address = html_address.handle(places_details['result'].get("adr_address"))
+
+    # make an html2text object, convert html address to readable text
+    readable_address = html2text.HTML2Text().handle(places_details['result'].get("adr_address"))
+
+    # print readable address
     print(readable_address)
 
     # store the results in a list object.
