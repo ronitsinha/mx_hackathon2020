@@ -1,10 +1,9 @@
 import googlemaps
 import pprint
 import time
-import html2text
 # from GoogleMapsAPIKey import get_my_key
 
-lat_lon = '-33.8670522,151.1957362'
+# lat_lon = '-33.8670522,151.1957362'
 
 #define API
 API_KEY = 'AIzaSyA950W2SYIsCt6uvuFNItJmRGetaxY4W30'
