@@ -6,4 +6,4 @@ Google Maps API
 - **save data on each user (each restaurant & food bank)
     - use requests?
 - generate data for each place
-    - use places.py
+    - use places.py, directions.py, distance_matrix.py
