@@ -5,9 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
 
-	<script type="text/javascript">
-		var name_submitted = "{{ True if name else False }}"=='True'
-	</script>
+	<script type="text/javascript" src="data.json"></script>
 	<script src="{{ url_for('static', filename='restaurant.js') }}"></script>		
 </head>
 <body>

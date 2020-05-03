@@ -1,13 +1,12 @@
 import flask as fl
 import json
 import googlemaps
-import googlemaps
 import pprint
 import time
 import html2text
 # from GoogleMapsAPIKey import get_my_key
 
-lat_lon = '-33.8670522,151.1957362'
+# lat_lon = '-33.8670522,151.1957362'
 
 #define API
 API_KEY = 'AIzaSyA950W2SYIsCt6uvuFNItJmRGetaxY4W30'
@@ -19,7 +18,7 @@ def get_nearby_places(placeId, serviceType, radius=24000 ):
     center = gmaps.place(place_id=placeId)
     places_result = gmaps.places_nearby(location=center['result']['geometry']['location'], radius=radius, type=serviceType)
     stored_results = []
-    while len(places_result['results']) >= 20 and len(stored_results) <= 50:
+    while len(places_result['results']) >= 20 and len(stored_results) <= 10:
         for place in places_result['results']:
             # define the place id, needed to get place details. Formatted as a string.
             my_place_id = place['place_id']
@@ -47,7 +46,7 @@ def index ():
 	return fl.render_template('index.html')
 
 @app.route('/restaurant')
-@app.route('/restaurant/<name>')
+@app.route('/restaurant/<name>/')
 def restaurant (name=None):
 	return fl.render_template('restaurant.html', name=name)
 
@@ -68,8 +67,15 @@ def handle_foodbank_request ():
 def handle_location (user_type=None):
 	location = fl.request.form['location'] 
 
+	name = gmaps.place(place_id=location, fields=['name'])
+
 	service_type = 'restaurant' if user_type=='foodbank' else 'foodbank'
 
-	nearby = get_nearby_places(location, user_type, 50)
+	nearby = get_nearby_places(location, 'restaurant')
 
-	return fl.redirect(fl.url_for(user_type, name=name))	
+	app.logger.debug(nearby)
+
+	with open('static/data.js', 'w') as json_file:
+  		json_file.write( 'data=JSON.parse(String(%s))' % json.dumps(nearby) )
+
+	return fl.redirect(fl.url_for(user_type, name=name['result']['name']))

@@ -7,6 +7,10 @@ var latitude, longitude;
 window.onload = _ => {
 	console.log(name_submitted)
 
+	obj = JSON.parse(data)
+
+	console.log(obj)
+
 	if (name_submitted) {
 
 		document.getElementById('requestadd').onclick = _ => {
