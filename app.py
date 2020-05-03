@@ -32,3 +32,11 @@ def handle_foodbank_request ():
 	app.logger.debug(data)
 
 	return None
+
+@app.route('/handle_restaurant_offer', methods=['POST'])
+def handle_restaurant_offer ():
+	data = json.loads(fl.request.form['js_data'])
+
+	app.logger.debug(data)
+
+	return None

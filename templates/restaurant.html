@@ -2,12 +2,53 @@
 <html>
 <head>
 	<title>Restaurant</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+
+	<script src="{{ url_for('static', filename='restaurant.js') }}"></script>		
 </head>
 <body>
 	<div class="restaurant container">
 		{% if name %}
-			<p class="flex-item">Hello Restaurant {{ name }}!</p>
+			<ul class="navigation flex-item">
+				<li class="username"><a href="#">{{ name }}</a></li>
+				<li class="home"><a href="/">Home</a></li>
+				<li class="notifications"><a href="#">Notifications</a></li>
+			</ul>
+			<div class="main">
+				<ul class="nearby">
+					<li>Food Bank #1</li>
+					<li>Food Bank #2</li>
+					<li>Food Bank #3</li>
+				</ul>
+
+				<div class="request">
+					<h3>What can you offer?</h3>
+
+					<form id="requestform" action="">
+						<div class="field">
+							<label for="name">Food:</label><br>
+							<input type="text" id="food" name="name">
+						</div>
+
+						<div class="field">
+							<label for="name">Qty:</label><br>
+							<input type="text" id="qty" name="name">
+						</div>
+
+						<input type="button" value="Add to List" id="requestadd">
+
+
+					</form>
+
+					<ul id="requestorder">
+						
+					</ul>
+
+					<input type="button" value="Make Offer" id="placeorder">
+
+				</div>
+			</div>
 		{% else %}
 			<p class="flex-item">What restaurant are you?</p>
 			<form class="flex-item" action="{{ url_for('handle_name', user_type='restaurant') }}" method="post">
